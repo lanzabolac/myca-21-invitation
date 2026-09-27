@@ -2,22 +2,22 @@
    ✨ CUSTOMIZE YOUR INVITATION HERE
    ========================================== */
 const eventData = {
-  celebrantName: "ALLIANA",
-  nickname: "Liana",
-  age: 18,
+  celebrantName: "KEITH LYN",
+  nickname: "Keith Lyn",
+  age: 23,
   quote: "Stepping into a new chapter, surrounded by the people I love.",
 
-  eventDate: "December 20, 2026",
-  eventDateTime: "2026-12-20T17:00:00",   // used by the countdown
+  eventDate: "November 09, 2026",
+  eventDateTime: "2026-11-09T17:00:00",   // used by the countdown
   eventTime: "5:00 PM",
 
   venue: "Example Grand Ballroom",
-  venueAddress: "Bulacan, Philippines",
+  venueAddress: "Mateo Street, Malamig, Bustos, Bulacan, Philippines",
   mapLink: "",                             // paste a Google Maps link, or leave "" to search the venue
 
-  theme: "",                               // color preset: "", "rose", "sage", "lavender", "midnight" (or edit style.css)
+  theme: "lavander",                               // color preset: "", "rose", "sage", "lavender", "midnight" (or edit style.css)
 
-  music: "audio/music.mp3",                // your song file; use "" to remove the music button
+  music: "music/enchanted.mp3",                // your song file; use "" to remove the music button
   musicAutoplay: true,                     // starts when the guest taps "Open Invitation"
 
   heroImage: "images/hero.jpg",
@@ -32,10 +32,10 @@ const eventData = {
   gentlemen: "Suit / formal wear",
 
   traditions: [
-    { n: "18", t: "Roses", d: "Eighteen special people share a dance and a rose." },
-    { n: "18", t: "Candles", d: "Eighteen loved ones light a candle with a heartfelt wish." },
-    { n: "18", t: "Treasures", d: "Eighteen keepsakes and words of wisdom for the journey." },
-    { n: "18", t: "Special Moments", d: "Cherished memories, toasts and messages from the heart." }
+    { n: "23", t: "Roses", d: "Eighteen special people share a dance and a rose." },
+    { n: "23", t: "Candles", d: "Eighteen loved ones light a candle with a heartfelt wish." },
+    { n: "23", t: "Treasures", d: "Eighteen keepsakes and words of wisdom for the journey." },
+    { n: "23", t: "Special Moments", d: "Cherished memories, toasts and messages from the heart." }
   ],
 
   rsvpDeadline: null,                      // e.g. "2026-12-10T23:59:59" or null for no deadline
