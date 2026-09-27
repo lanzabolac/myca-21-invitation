@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Debut Invitation</title>
+<meta name="description" content="You are invited to a debut celebration.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style(1).css">
+</head>
+<body class="locked">
+
+<!-- COVER -->
+<header id="cover" aria-label="Invitation cover"><div>
+  <p class="kicker" id="greet-kicker">YOU ARE INVITED</p>
+  <h1 data-bind="celebrantName"></h1>
+  <p class="script">Turning <span data-bind="age"></span></p>
+  <p class="sub" id="greet-sub"></p>
+  <button class="btn" id="open-btn" type="button">Open Invitation</button>
+</div></header>
+
+<!-- NAVIGATION -->
+<nav aria-label="Main">
+  <button id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  <ul id="menu">
+    <li><a href="#home">Home</a></li><li><a href="#invitation">Invitation</a></li><li><a href="#event">Event</a></li>
+    <li><a href="#gallery">Gallery</a></li><li><a href="#dress">Dress Code</a></li><li><a href="#rsvp">RSVP</a></li>
+  </ul>
+</nav>
+
+<main>
+<!-- CELEBRANT -->
+<section id="home"><div class="wrap split">
+  <div class="frame rv"><div class="portrait" id="portrait"></div></div>
+  <div class="rv">
+    <p class="kicker">The Celebrant</p>
+    <h2 class="name" data-bind="celebrantName"></h2>
+    <div class="line" style="margin-left:0"></div>
+    <blockquote data-bind="quote"></blockquote>
+    <div class="big" data-bind="age" aria-hidden="true"></div>
+  </div>
+</div></section>
+
+<!-- INVITATION MESSAGE -->
+<section id="invitation" class="soft"><div class="wrap narrow rv">
+  <p class="script">With hearts full of gratitude,</p>
+  <p class="lead">we invite you to celebrate<br>a very special milestone with us.</p>
+  <h2><span data-bind="nameCap"></span>'s<br><span data-bind="ageTh"></span> Birthday</h2>
+  <div class="line"></div>
+  <p>Your presence would make this celebration even more meaningful.</p>
+</div></section>
+
+<!-- EVENT DETAILS + COUNTDOWN -->
+<section id="event"><div class="wrap">
+  <p class="kicker">Save the date</p><h2>Event Details</h2>
+  <div class="cards three">
+    <article class="card rv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><h3>The Date</h3><p data-bind="eventDate"></p></article>
+    <article class="card rv"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>The Time</h3><p data-bind="eventTime"></p></article>
+    <article class="card rv"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h3>The Venue</h3><p><strong data-bind="venue"></strong><br><span data-bind="venueAddress"></span></p></article>
+  </div>
+  <div id="cd-grid" class="count rv">
+    <div><b id="cd-d">00</b><span>Days</span></div><div><b id="cd-h">00</b><span>Hours</span></div>
+    <div><b id="cd-m">00</b><span>Minutes</span></div><div><b id="cd-s">00</b><span>Seconds</span></div>
+  </div>
+  <p id="cd-done" hidden>THE CELEBRATION HAS BEGUN</p>
+</div></section>
+
+<!-- GALLERY (built from eventData.galleryImages) -->
+<section id="gallery" class="soft"><div class="wrap">
+  <p class="kicker">Moments</p><h2>Gallery</h2>
+  <div id="grid" class="grid"></div>
+</div></section>
+
+<!-- DRESS CODE -->
+<section id="dress"><div class="wrap narrow rv">
+  <p class="kicker">Dress Code</p><h2 data-bind="dressCode"></h2><div class="line"></div>
+  <div class="two">
+    <div><h3>Ladies</h3><p data-bind="ladies"></p></div>
+    <div><h3>Gentlemen</h3><p data-bind="gentlemen"></p></div>
+  </div>
+</div></section>
+
+<!-- PROGRAM / TRADITIONS -->
+<section id="program" class="soft"><div class="wrap">
+  <p class="kicker">Debut Traditions</p><h2>The Program</h2>
+  <div id="trad" class="cards four"></div>
+</div></section>
+
+<!-- RSVP -->
+<section id="rsvp"><div class="wrap narrow">
+  <p class="kicker">RSVP</p><h2>We'd Love to Celebrate With You</h2>
+  <p>Please let us know if you'll be joining the celebration.</p>
+  <div class="rcard rv">
+    <p id="rsvp-closed" hidden><b>RSVP CLOSED</b><br><span id="closed-msg">The RSVP deadline has passed. Thank you for your understanding.</span></p>
+    <form id="rsvp-form" novalidate>
+      <div class="f"><label for="name">Full Name</label><input id="name" type="text" maxlength="80" autocomplete="name" placeholder="Your full name"><small class="err" id="err-name"></small></div>
+      <div class="f"><label for="email">Email Address</label><input id="email" type="email" maxlength="100" autocomplete="email" placeholder="your@email.com"><small class="err" id="err-email"></small></div>
+      <div class="f"><label for="contact">Contact Number</label><input id="contact" type="tel" maxlength="20" autocomplete="tel" placeholder="09XX XXX XXXX"><small class="err" id="err-contact"></small></div>
+      <div class="f"><label for="gc">Number of Guests</label>
+        <div class="counter"><button type="button" id="minus" aria-label="Fewer guests">&minus;</button><input id="gc" type="number" value="1" min="1" max="5"><button type="button" id="plus" aria-label="More guests">+</button></div></div>
+      <fieldset class="f"><legend>Will you attend?</legend>
+        <label class="opt"><input type="radio" name="att" value="attending"><span><b>Yes, I'll be there</b><em>I can't wait to celebrate!</em></span></label>
+        <label class="opt"><input type="radio" name="att" value="declined"><span><b>Sorry, I can't attend</b><em>I'll celebrate with you in spirit.</em></span></label>
+        <small class="err" id="err-att"></small></fieldset>
+      <div class="f"><label for="msg">Message / Special Request</label><textarea id="msg" rows="3" maxlength="500" placeholder="Optional message..."></textarea></div>
+      <small class="err" id="err-form"></small>
+      <button class="btn solid" type="submit">Send RSVP ♡</button>
+    </form>
+    <p id="rsvp-done" hidden></p>
+  </div>
+</div></section>
+
+<!-- VENUE -->
+<section id="venue" class="soft"><div class="wrap narrow">
+  <p class="kicker">The Venue</p><h2 data-bind="venue"></h2><p data-bind="venueAddress"></p>
+  <div class="map" id="map"></div>
+  <a class="btn" id="map-btn" target="_blank" rel="noopener">View Location</a>
+</div></section>
+
+<!-- ADMIN (demo only; enable in script.js) -->
+<section id="admin" hidden><div class="wrap">
+  <h2>RSVP Summary</h2><p id="sum"></p>
+  <div class="scroll"><table class="tbl"><thead><tr><th>Name</th><th>Guests</th><th>Attendance</th><th>Message</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <p><small>Client-side demo only. This is not secure authentication.</small></p>
+  <button class="btn" id="csv" type="button">Export CSV</button> <button class="btn" id="clear" type="button">Clear RSVPs</button>
+</div></section>
+</main>
+
+<footer>
+  <h2 class="name" data-bind="celebrantName"></h2>
+  <p class="script">Turning <span data-bind="age"></span></p>
+  <p>Thank you for being part<br>of this special celebration.</p>
+  <small>© <span data-bind="year"></span> <span data-bind="nameCap"></span></small>
+</footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button id="lb-close" type="button" aria-label="Close">✕</button>
+  <button id="lb-prev" type="button" aria-label="Previous photo">‹</button>
+  <div id="lb-body"></div>
+  <button id="lb-next" type="button" aria-label="Next photo">›</button>
+</div>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="m-title"><div class="mbox">
+  <h3 id="m-title"></h3><p id="m-text"></p><p class="script">♡</p><button class="btn solid" id="m-close" type="button"></button>
+</div></div>
+
+<button id="music-btn" type="button" aria-label="Play music" aria-pressed="false" hidden><i></i><i></i><i></i></button>
+<audio id="bgm" loop preload="metadata"></audio>
+
+<script src="script(1).js"></script>
+</body>
+</html>
