@@ -38,7 +38,7 @@ const eventData = {
     { n: "23", t: "Special Moments", d: "Cherished memories, toasts and messages from the heart." }
   ],
 
-  rsvpDeadline: null,                      // e.g. "2026-12-10T23:59:59" or null for no deadline
+  rsvpDeadline: "2026-11-09T23:59:59",                      // e.g. "2026-12-10T23:59:59" or null for no deadline
   personalization: true                    // enables index.html?guest=Name
 };
 
@@ -48,6 +48,7 @@ const rsvpConfig = {
   requireEmail: false,
   requireContactNumber: false,
   endpoint: null,                          // null = save in this browser only; or "https://your-api.com/rsvp"
+  recipientEmail: "abolaclanzpaulo@gmail.com",      //papalitan lang lagi to
   confirmationMessage: "Your RSVP has been recorded."
 };
 
