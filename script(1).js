@@ -444,7 +444,7 @@ function initializeRSVP() {
         name: g.name,
         email: g.email,
         contact: g.contact,
-        guests: g.guests,
+        guests: g.guestCount,
         attendance: g.attendance,
         message: g.message,
       });
