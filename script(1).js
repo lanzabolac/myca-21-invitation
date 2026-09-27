@@ -69,8 +69,7 @@ const rsvpConfig = {
   enabled: true,
   maxGuests: 5,
   requireEmail: false,
-  requireContactNumber: false,
-  endpoint: null, // null = save in this browser only; or "https://your-api.com/rsvp"
+  requireContactNumber: false, 
   // ✨ CHANGE THIS FOR EACH CLIENT
   recipientEmail: "abolaclanzpaulo@gmail.com",
 
