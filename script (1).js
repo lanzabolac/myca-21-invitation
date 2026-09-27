@@ -2,13 +2,13 @@
    ✨ CUSTOMIZE YOUR INVITATION HERE
    ========================================== */
 const eventData = {
-  celebrantName: "KEITH LYN",
-  nickname: "Keith Lyn",
-  age: 21,
+  celebrantName: "ALLIANA",
+  nickname: "Liana",
+  age: 18,
   quote: "Stepping into a new chapter, surrounded by the people I love.",
 
-  eventDate: "November 9, 2026",
-  eventDateTime: "2026-11-9T17:00:00",   // used by the countdown
+  eventDate: "December 20, 2026",
+  eventDateTime: "2026-12-20T17:00:00",   // used by the countdown
   eventTime: "5:00 PM",
 
   venue: "Example Grand Ballroom",
@@ -17,7 +17,7 @@ const eventData = {
 
   theme: "",                               // color preset: "", "rose", "sage", "lavender", "midnight" (or edit style.css)
 
-  music: "music/enchanted.mp3",                // your song file; use "" to remove the music button
+  music: "audio/music.mp3",                // your song file; use "" to remove the music button
   musicAutoplay: true,                     // starts when the guest taps "Open Invitation"
 
   heroImage: "images/hero.jpg",
