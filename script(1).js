@@ -69,13 +69,24 @@ const rsvpConfig = {
   enabled: true,
   maxGuests: 5,
   requireEmail: false,
-  requireContactNumber: false, 
-  // ✨ CHANGE THIS FOR EACH CLIENT
-  recipientEmail: "abolaclanzpaulo@gmail.com",
+  requireContactNumber: false,
 
-  endpoint: "/api/rsvp",
+  endpoint: null,
+
   confirmationMessage: "Your RSVP has been recorded.",
 };
+
+// const rsvpConfig = {
+//   enabled: true,
+//   maxGuests: 5,
+//   requireEmail: false,
+//   requireContactNumber: false,
+//   // ✨ CHANGE THIS FOR EACH CLIENT
+//   recipientEmail: "abolaclanzpaulo@gmail.com",
+
+//   endpoint: "/api/rsvp",
+//   confirmationMessage: "Your RSVP has been recorded.",
+// };
 
 const adminConfig = { enabled: false }; // demo summary table. NOT secure authentication.
 
@@ -429,14 +440,16 @@ function initializeRSVP() {
     const btn = form.querySelector("[type=submit]");
     btn.disabled = true;
     try {
-      if (rsvpConfig.endpoint) {
-        const r = await fetch(rsvpConfig.endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(g),
-        });
-        if (!r.ok) throw new Error("bad response");
-      } else saveRSVP(g);
+      await emailjs.send("service_re6haon", "template_esa8mnl", {
+        name: g.name,
+        email: g.email,
+        contact: g.contact,
+        guests: g.guests,
+        attendance: g.attendance,
+        message: g.message,
+      });
+
+      saveRSVP(g);
     } catch {
       showErr("form", "We couldn't save your RSVP. Please try again.");
       btn.disabled = false;
